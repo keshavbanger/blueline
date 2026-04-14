@@ -1,0 +1,270 @@
+/* =============================================
+   BLUELINE ANIMATIONS & MOTION DESIGN
+   ============================================= */
+
+/* --- Keyframes --- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-18px); }
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50%       { transform: scale(1.2); opacity: 1; }
+}
+@keyframes borderPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.5); }
+    50%       { box-shadow: 0 0 0 10px rgba(79, 70, 229, 0); }
+}
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 10px rgba(249, 115, 22, 0.3); }
+    50%       { text-shadow: 0 0 25px rgba(249, 115, 22, 0.9); }
+}
+@keyframes navSlideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes archFloat {
+    0%, 100% { transform: translateY(20px); }
+    50%       { transform: translateY(5px); }
+}
+@keyframes ringRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+@keyframes dotBounce {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.4); }
+}
+
+/* --- Hero Entrance Animations --- */
+.h-navbar {
+    animation: navSlideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+.h-hero-left h1 {
+    animation: slideInLeft 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+.h-hero-left > p {
+    animation: fadeUp 0.8s ease 0.55s both;
+}
+.h-search-box {
+    animation: fadeUp 0.8s ease 0.75s both;
+}
+.h-stats {
+    animation: fadeUp 0.8s ease 0.95s both;
+}
+.h-arch-image {
+    animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both, archFloat 5s ease-in-out 1.4s infinite;
+}
+
+/* --- Floating Orange Circle --- */
+.h-orange-circle-bg {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* --- Logo dot bounce --- */
+.h-dot {
+    animation: dotBounce 2s ease-in-out infinite;
+}
+
+/* --- Arch Image hover --- */
+.h-arch-image {
+    transition: box-shadow 0.4s ease;
+}
+.h-arch-image:hover {
+    box-shadow: -30px 10px 70px rgba(0,0,0,0.7);
+}
+
+/* --- Scroll Reveal Classes (toggled by JS) --- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.88);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger delays for grid children */
+.stagger-children > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children > *:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children > *:nth-child(5) { transition-delay: 0.4s; }
+.stagger-children > *:nth-child(6) { transition-delay: 0.5s; }
+
+/* --- Nav link underline slide --- */
+.h-nav-links a {
+    position: relative;
+}
+.h-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 2px;
+    background: #4f46e5;
+    transition: width 0.3s ease;
+}
+.h-nav-links a:hover::after { width: 100%; }
+
+/* --- Contact button pulse --- */
+.h-btn-contact {
+    animation: borderPulse 2.5s ease-in-out infinite;
+}
+
+/* --- Ideal Choice Cards Hover --- */
+.ideal-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.ideal-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.13);
+}
+.ideal-card .icon-wrap {
+    transition: transform 0.3s ease;
+}
+.ideal-card:hover .icon-wrap {
+    transform: rotate(12deg) scale(1.15);
+}
+
+/* --- Course Cards --- */
+.course-col {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-col:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+/* --- Stats hover glow --- */
+.h-stat-item {
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+.h-stat-item:hover {
+    transform: translateY(-4px);
+}
+.h-stat-item:hover h3 {
+    animation: textGlow 1s ease infinite;
+}
+
+/* --- Search box focus ring --- */
+.h-search-box {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.h-search-box:focus-within {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.35);
+    transform: scale(1.01);
+}
+
+/* --- Trainer Images --- */
+.trainers-grid img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+.trainers-grid img:hover {
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.45);
+    position: relative;
+    z-index: 5;
+}
+
+/* --- Client Logos --- */
+.client-logo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(40%);
+}
+.client-logo:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* --- WhatsApp Button --- */
+.whatsapp-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
+}
+
+/* --- Social icons spin --- */
+.social-links a {
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.social-links a:hover {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* --- Explore / CTA buttons --- */
+.explore-btn, .h-btn-search, .btn-lomos-solid {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.explore-btn:hover, .h-btn-search:hover, .btn-lomos-solid:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* --- View Course link arrow --- */
+.view-course {
+    transition: gap 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.view-course:hover {
+    gap: 12px;
+}
+
+/* --- Page fade in --- */
+body {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* --- Smooth scroll behaviour --- */
+html {
+    scroll-behavior: smooth;
+}
